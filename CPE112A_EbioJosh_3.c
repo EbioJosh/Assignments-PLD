@@ -22,15 +22,16 @@ int main(){
 	int x,y;
 	printf("Please input a positive integer: ");
 	scanf("%d",&x);
-	if(x<0){
-		printf("Please enter a positive integer");
+	
+	if(x<0)
+	{
+	printf("Please enter a positive integer");
 	}
+	
 	else if(x>0)
 	{
 	printf("Please input an integer: ");
 	scanf("%d",&y);
-	
-	
 	power(x,y);
 	}
 	return 0;
