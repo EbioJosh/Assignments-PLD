@@ -1,38 +1,43 @@
 #include <stdio.h>
 #include <math.h>
 
-double power(int x, int y)
+double power(double base, int exponent)
 {
 	int z, w;
-	if(y>0){
-		z = x*pow(x, y-1);
+	if(exponent>0)
+	{
+		z = base*pow(base, exponent-1);
 		printf("%d",z);
 	}
-	else if(y=0){
+	else if(exponent=0)
+	{
 		printf("1");
 	}
-	else if(y<0){
-		w = 1/pow(x,y);
+	else if(exponent<0)
+	{
+		w = 1/pow(base,exponent);
 		printf("%d",w);
 	}
 	
 	
 }
 int main(){
-	int x,y;
+	int base,exponent;
 	printf("Please input a positive integer: ");
-	scanf("%d",&x);
+	scanf("%d",&base);
 	
-	if(x<0)
+	if(base<=0)
 	{
-	printf("Please enter a positive integer");
+		printf("\n Please enter a positive integer");
 	}
+	else
+	{
+		printf("Please input an integer: ");
+		scanf("%d",&exponent);
 	
-	else if(x>0)
-	{
-	printf("Please input an integer: ");
-	scanf("%d",&y);
-	power(x,y);
+	power(base,exponent);
 	}
+	printf("%.2lf^%d = %.2lf\n", base, exponent, pow(base, exponent));
+
 	return 0;
 }
